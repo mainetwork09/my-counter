@@ -1,23 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './images/logo.svg';
+import './css/App.css';
+import ShowCounter from './components/ShowCounter';
+import ButtonCounter from './components/ButtonCounter';
+
+import styled from "styled-components";
+
+const ButtonWrapper = styled.div`
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+`
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ShowCounter />
+        <ButtonWrapper>
+          <ButtonCounter type="increase" />
+          <ButtonCounter type="decrease" />
+        </ButtonWrapper>
       </header>
     </div>
   );
